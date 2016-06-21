@@ -56,3 +56,18 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
     console.log($scope.weatherResult)
     
 }]);
+
+// Directives
+weatherApp.directive('weatherReport', function(){
+    
+    return {
+        restrict: 'E',
+        templateUrl: 'directives/weatherReport.html',
+        replace: true,
+        scope: {
+            weatherDay: '=', // 2 way bind            
+            convertToDate: '&', // function
+            dateFormat: '@' // string
+        }
+    }
+});
